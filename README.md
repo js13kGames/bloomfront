@@ -1,8 +1,8 @@
-# iris
+# bloomfront
 
 An isometric real-time strategy game that fits in 13 kilobytes, built for [js13kGames 2026](https://js13kgames.com/2026/).
 
-![Three herds fighting over a continent](screenshots/battle.jpg)
+![Three herds fighting over a continent](screenshots/battle.png)
 
 Open `index.html` in any modern browser. Nothing to install, nothing to build, no server needed.
 
@@ -32,7 +32,7 @@ wheel                 zoom
 
 ## Units and buildings
 
-![A rose settlement under attack](screenshots/settlement.jpg)
+![A rose settlement under attack](screenshots/settlement.png)
 
 A **grove** trains foals, which are fast, cheap and the best at spreading colour. Losing every grove can lose you the game.
 
@@ -46,7 +46,7 @@ Buildings need a flat two by two patch of living ground you already own. Each on
 
 ## Setting up a game
 
-![The lobby](screenshots/lobby.jpg)
+![The lobby](screenshots/lobby.png)
 
 The lobby lets you choose the number of opponents, how large herds can grow, the speed of the game, how hard the rivals play, and which victory conditions apply. It draws over the map you are about to play, and a new world can be rolled until you like the look of one.
 
@@ -54,7 +54,7 @@ The lobby lets you choose the number of opponents, how large herds can grow, the
 
 ```
 npm install
-npm run pack     writes dist/iris.zip
+npm run pack     writes dist/bloomfront.zip
 npm test         runs the checks
 ```
 

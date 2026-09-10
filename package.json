@@ -1,5 +1,5 @@
 {
-  "name": "iris",
+  "name": "bloomfront",
   "version": "1.0.0",
   "description": "An isometric real time strategy game for js13kGames 2026, shipped as one zipped index.html",
   "private": true,

@@ -1,4 +1,4 @@
-// Headless checks for iris.
+// Headless checks for bloomfront.
 //
 //   node test/logic.mjs
 //
@@ -73,7 +73,7 @@ Object.assign(globalThis, env);
 // and useless here, so one line gets appended before evaluation. It only exists
 // in this file; index.html never sees it.
 const EXPOSE = `
-;globalThis.__iris = {
+;globalThis.__bloomfront = {
   MAP, at, inMap, vit, own, elev, kind, occupied, units, buildings, purse, territory,
   buildField, steppable, walkable, bloomAt, spawn, order, canPlace, place,
   GOAL, UNREACHED, FOAL, CHARGER, PRISM, GROVE, STABLE, SPIRE, WATER,
@@ -99,7 +99,7 @@ const EXPOSE = `
 
 new Function(code + EXPOSE)();
 
-const g = globalThis.__iris;
+const g = globalThis.__bloomfront;
 if (!g) throw new Error("the game did not expose its internals");
 
 // --- harness -------------------------------------------------------------------

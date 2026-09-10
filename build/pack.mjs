@@ -1,4 +1,4 @@
-// Packs index.html into dist/iris.zip, which is what gets submitted.
+// Packs index.html into dist/bloomfront.zip, which is what gets submitted.
 //
 //   node build/pack.mjs [--tries=N] [--tiny[=name,name,...]]
 //
@@ -205,7 +205,7 @@ const bodyMin = minifyBody(body);
 // nonsense. The plain build is all ASCII and survives whatever a browser guesses.
 function shell(script, charset) {
   return "<!doctype html>" + (charset ? '<meta charset="utf-8">' : "") +
-    "<title>iris</title><style>" + cssMin + "</style>" + bodyMin +
+    "<title>bloomfront</title><style>" + cssMin + "</style>" + bodyMin +
     "<script>" + script + "</script>";
 }
 
@@ -214,7 +214,7 @@ function shell(script, charset) {
 // it reaches content, and the game dies on the first getElementById. Six bytes for
 // somewhere to put the markup.
 function bareShell(script) {
-  return "<!doctype html><meta charset=\"utf-8\"><title>iris</title><body><script>" +
+  return "<!doctype html><meta charset=\"utf-8\"><title>bloomfront</title><body><script>" +
     script + "</script>";
 }
 
@@ -355,7 +355,7 @@ writeFileSync(new URL(`dist/index${tag}.html`, root), best.html);
 // Keep the unpacked build around. A Roadroller artifact is unreadable when
 // something goes wrong in the browser; this one can at least be grepped.
 writeFileSync(new URL(`dist/index${tag}.min.html`, root), plain);
-writeFileSync(new URL(`dist/iris${tag}.zip`, root), best.zip);
+writeFileSync(new URL(`dist/bloomfront${tag}.zip`, root), best.zip);
 writeFileSync(new URL(`dist/mangle-cache${tag}.json`, root), JSON.stringify(mangleCache, null, 2));
 
 const pad = (s, n) => String(s).padStart(n);
@@ -371,6 +371,6 @@ for (const c of candidates) {
     " B   zip " + pad(c.zip.length, 6) + " B" + (c === best ? "   <- shipped" : ""));
 }
 const LIMIT = 13312;
-console.log(`\ndist/iris${tag}.zip  ` + best.zip.length + " B   " +
+console.log(`\ndist/bloomfront${tag}.zip  ` + best.zip.length + " B   " +
   (best.zip.length / LIMIT * 100).toFixed(1) + "% of the 13 KB limit   " +
   (LIMIT - best.zip.length) + " B of headroom");
